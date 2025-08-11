@@ -5,11 +5,10 @@ from bs4 import BeautifulSoup
 city = input("Enter a city name: ").strip()
 state = input("Enter a state (or leave blank if outside US): ").strip()
 
-# Build URL — wttr.in accepts "city,state" format
+# Build URL
 location = f"{city},{state}" if state else city
 url = f"https://wttr.in/{location}?format=j1"
 
-# Avoid Brotli by removing "br" from Accept-Encoding
 headers = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
                   "AppleWebKit/537.36 (KHTML, like Gecko) "
